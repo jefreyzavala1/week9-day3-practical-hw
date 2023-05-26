@@ -7,7 +7,7 @@ app.get('/greeting/',(req,res)=>{
 })
 
 app.get('/greeting/:name',(req,res)=>{
-    res.send(`<h2>What's up ${req.params.name}! It's so great to see you!`)
+    res.send(`<h2>What's up ${req.params.name}! It's so great to see you!.`)
 })
 
 
