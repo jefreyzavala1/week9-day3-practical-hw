@@ -24,6 +24,26 @@ app.get('/magic/:question', (req, res) => {
     <h1>The magic 8 ball says: ${magicEightBallAnswers[Math.floor(Math.random() * length)]}</h1>`)
 })
 
+// Fibonnaci
+app.get('/fibonacci/:number', (req, res) => {
+  const fibonacciNumbers = [0, 1, 1]
+  let current = fibonacciNumbers[fibonacciNumbers.length - 1]
+  let previous = fibonacciNumbers[fibonacciNumbers.length - 2]
+
+  for (let i = fibonacciNumbers.length-1; i <= req.params.number; i++) {
+    fibonacciNumbers.push(current + previous)
+    current = fibonacciNumbers[fibonacciNumbers.length-1]
+    previous = fibonacciNumbers[fibonacciNumbers.length - 2]
+  }
+  console.log(fibonacciNumbers)
+
+  if (fibonacciNumbers.includes(Number(req.params.number))) {
+    res.send('<h2>Very good. It is Fibonacci</h2>')
+  } else {
+    res.send('<h2>I can tell this is not a fibonacci number.</h2>')
+  }
+})
+
 app.listen(PORT, () => {
   console.log(`Listening on Port ${PORT}`)
 })
