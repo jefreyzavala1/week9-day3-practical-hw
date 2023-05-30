@@ -30,9 +30,9 @@ app.get('/fibonacci/:number', (req, res) => {
   let current = fibonacciNumbers[fibonacciNumbers.length - 1]
   let previous = fibonacciNumbers[fibonacciNumbers.length - 2]
 
-  for (let i = fibonacciNumbers.length-1; i <= req.params.number; i++) {
+  for (let i = fibonacciNumbers.length - 1; i <= req.params.number; i++) {
     fibonacciNumbers.push(current + previous)
-    current = fibonacciNumbers[fibonacciNumbers.length-1]
+    current = fibonacciNumbers[fibonacciNumbers.length - 1]
     previous = fibonacciNumbers[fibonacciNumbers.length - 2]
   }
   console.log(fibonacciNumbers)
